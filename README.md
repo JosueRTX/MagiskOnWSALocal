@@ -4,7 +4,7 @@
 
 - Linux (x86_64 or arm64)
 
-    The following dependencies are required: `setools lzip wine patchelf e2fsprogs aria2 python3`
+    The following dependencies are required: `setools lzip wine patchelf e2fsprogs aria2 python3 attr`
 
     The following components need to be installed using `winetricks`: `msxml6`
 
@@ -14,11 +14,22 @@
   - Recommended Use
     - Ubuntu (You can use [WSL2](https://apps.microsoft.com/store/search?publisher=Canonical%20Group%20Limited))
 
-        `run.sh` will handle all dependencies automatically.
-        No need to type any commands.
+        Ready to use right out of the box.
+    - Debian (You can use [WSL2](https://apps.microsoft.com/store/detail/debian/9MSVKQC78PK6))
+
+        Need to add `contrib` sources to the source list to install winetricks.
+
+    - OpenSUSE (You can use [WSL2](https://apps.microsoft.com/store/search?publisher=SUSE))
+
+        Ready to use right out of the box.
+
+    `run.sh` will handle all dependencies automatically.
+
+    No need to type any commands.
   - Other Distributions
 
     Install the dependencies manually.
+
     Use the command-line program `build.sh`.
 
 ## Features
@@ -54,7 +65,7 @@
 1. Select the root solution (none means no root)
 1. Wait for the script to complete and the artifact will be in the `output` folder
 1. Move the artifact to a place you like
-1. Right-click `Install.ps1` and select `Run with PowerShell`
+1. Double-click `Run.bat`
     - If you previously have a MagiskOnWSA installation, it will automatically uninstall the previous one while **preserving all user data** and install the new one, so don't worry about your data.
     - If you have an official WSA installation, you should uninstall it first. (In case you want to preserve your data, you can backup `%LOCALAPPDATA%\Packages\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\LocalCache\userdata.vhdx` before uninstallation and restore it after installation.) (If you want to restore the icons to the start menu, please install and use [WSAHelper](https://github.com/LSPosed/WSAHelper/releases/latest).)
     - If the popup windows disappear **without asking administrative permission** and WSA is not installed successfully, you should manually run `Install.ps1` as administrator:
